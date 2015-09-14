@@ -1,0 +1,70 @@
+extends layout
+
+block content
+  .wrapper
+    .sidebar(data-color="black" data-image="https://camo.githubusercontent.com/fa6d5c12609ed8a3ba1163b96f9e9979b8f59b0d/687474703a2f2f7765732e696f2f566663732f636f6e74656e74")
+      .sidebar-wrapper
+        .logo
+          a.simple-text(href="/") Moby Dock
+          
+        ul.nav
+          li
+            a(href="#")
+              i.pe-7s-graph
+              p Dashboard
+          li.active
+            
+            a(href="#")
+              i.pe-7s-note2
+              p Containers
+              
+    .main-panel
+      nav.navbar.navbar-default.navbar-fixed
+        .container-fluid
+          .navbar-header
+            button.navbar-toggle(type="button" data-toggle="collapse" data-target="#navigation-example-2")
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href="#") Docker Containers
+          .collaps.navbar-collapse
+            ul.nav.navbar-nav.navbar-left
+                  
+              li.dropdown
+                a.dropdown-toggle(href="#" data-toggle="dropdown")
+                  i.fa.fa-globe
+                  b.caret
+                  span.notifications 5
+                  
+                ul.dropdown-menu
+                  li
+                    a(href="#") Notification #1
+                    a(href="#") Notification #2
+                    a(href="#") Notification #3
+                    a(href="#") Notification #4
+                    a(href="#") Notification #5
+      .content
+        .container-fluid
+          .row
+            .col-md-12
+              .card
+                .header
+                  h4.title Docker Containers
+                  p.category Running
+                .content.table-responsive.table-full-width
+                  table.table.table-hover.table-striped
+                    thead
+                      tr
+                        th ID
+                        th Name
+                        th Image
+                        th Command
+                    tbody
+                      each val in containers
+                        tr
+                          td= val["Id"].slice(0, 12)
+                          td= val["Names"][0].replace("/", "")
+                          td= val["Image"]
+                          td= val["Command"]
+            
