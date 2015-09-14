@@ -1,3 +1,3 @@
 # Moby Dock #
 
-Web UI for Whales :whale:. Or Docker Containers :package:.
+Web UI for Whales :whale: and / or Docker Containers :package:.
